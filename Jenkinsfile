@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'node'
+    nodejs 'Node20'
   }
 
   options {
@@ -30,41 +30,13 @@ pipeline {
       }
     }
 
-    stage('Run pull request tests without credentials') {
-      when {
-        changeRequest()
-      }
+    stage('Run Playwright tests') {
       steps {
         script {
           if (isUnix()) {
             sh 'npm test'
           } else {
             bat 'npm test'
-          }
-        }
-      }
-    }
-
-    stage('Run branch tests with credentials') {
-      when {
-        not {
-          changeRequest()
-        }
-      }
-      steps {
-        withCredentials([
-          usernamePassword(
-            credentialsId: 'eventhub-e2e',
-            usernameVariable: 'E2E_EMAIL',
-            passwordVariable: 'E2E_PASSWORD'
-          )
-        ]) {
-          script {
-            if (isUnix()) {
-              sh 'npm test'
-            } else {
-              bat 'npm test'
-            }
           }
         }
       }
