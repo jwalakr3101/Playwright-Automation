@@ -13,6 +13,9 @@ pipeline {
   environment {
     CI = 'true'
     TEST_ENV = 'qa'
+
+    E2E_EMAIL = credentials('e2e-email')
+    E2E_PASSWORD = credentials('e2e-password')
   }
 
   stages {
