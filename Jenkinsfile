@@ -47,6 +47,7 @@ pipeline {
     always {
       junit testResults: 'test-results/junit.xml', allowEmptyResults: true
       archiveArtifacts artifacts: 'reports/playwright/**, test-results/**', allowEmptyArchive: true
+      allure([ results: [[path: 'allure-results']] ])
     }
   }
 }
