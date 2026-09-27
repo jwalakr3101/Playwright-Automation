@@ -1,0 +1,20 @@
+{
+  "name": "eventhub-playwright-automation",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reliable JavaScript Playwright UI and API automation for EventHub",
+  "scripts": {
+    "test": "playwright test",
+    "test:ui": "playwright test tests/ui",
+    "test:api": "playwright test tests/api",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report reports/playwright"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.0",
+    "dotenv": "^17.2.1"
+  }
+}

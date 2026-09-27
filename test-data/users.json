@@ -1,0 +1,6 @@
+{
+  "invalidUser": {
+    "email": "invalid.eventhub@example.com",
+    "password": "IncorrectPassword123!"
+  }
+}

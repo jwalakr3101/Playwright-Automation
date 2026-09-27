@@ -1,0 +1,9 @@
+{
+  "minimalEvent": {
+    "title": "Playwright Automation Event",
+    "description": "Created by an opt-in API test",
+    "date": "2030-01-01",
+    "venue": "Automation Lab",
+    "totalSeats": 100
+  }
+}
